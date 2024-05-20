@@ -13,17 +13,31 @@ $conn =  mysqli_connect('localhost', 'root', '', 'company');
 <body>
     <h1><a href="index.php">상품판매</a></h1>
     <section>
-        <ol>
+        <ul>
             <?php
                 $sql = "SELECT * FROM company";
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_array($result)) {
-                    echo "<li><a href='index.php?id={$row['id']}'>{$row['name']}</a></li>";
+                    echo "<li>
+                            <a href='index.php?id={$row['id']}'>{$row['name']}</a>
+                            <p>{$row['description']}</p>
+                        </li>";
                 }
-            ?>
-        </ol>
-    </section>
 
+                // if(isset($_GET['id'])){
+                //     $sql = "SELECT * FROM company WHERE id={$_GET['id']}";
+                //     $result = mysqli_query($conn, $sql);
+                //     $row = mysqli_fetch_array($result);
+                //     $article = array(
+                //         'name' => $row['name'],
+                //         'description' => $row['description']
+                //     );
+                // };
+            ?>
+        </ul>
+    </section>
+    <!-- <h2><?=$article['name']?></h2>
+    <p><?=$article['description']?></p> -->
     <script src="index.js"></script>
 </body>
 </html>

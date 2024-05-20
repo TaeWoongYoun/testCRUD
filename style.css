@@ -8,17 +8,24 @@ a{
     color: inherit;
 }
 
+ul li{
+    padding-left: 0;
+    list-style: none;
+}
+
 section{
     width: 100%;
     display: flex;
 }
 
-section ol{
+section ul{
     display: flex;
 }
 
-section ol li{
+section ul li{
+    background-color: bisque;
     width: 100px;
     height: 50px;
-    margin: 30px;
+    padding: 10px;
+    margin: 10px;
 }
