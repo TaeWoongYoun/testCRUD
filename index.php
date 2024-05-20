@@ -1,7 +1,4 @@
-<?php
-$conn =  mysqli_connect('localhost', 'root', '', 'company');
-?>
-
+<?php $conn =  mysqli_connect('localhost', 'root', '', 'company');?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,6 +9,7 @@ $conn =  mysqli_connect('localhost', 'root', '', 'company');
 </head>
 <body>
     <h1><a href="index.php">상품판매</a></h1>
+    <a href="create.php">CREATE</a>
     <section>
         <ul>
             <?php
@@ -26,16 +24,6 @@ $conn =  mysqli_connect('localhost', 'root', '', 'company');
                             </li>
                         </a>";
                 }
-
-                // if(isset($_GET['id'])){
-                //     $sql = "SELECT * FROM company WHERE id={$_GET['id']}";
-                //     $result = mysqli_query($conn, $sql);
-                //     $row = mysqli_fetch_array($result);
-                //     $article = array(
-                //         'name' => $row['name'],
-                //         'description' => $row['description']
-                //     );
-                // };
             ?>
         </ul>
     </section>
