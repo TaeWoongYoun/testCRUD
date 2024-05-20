@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php
+        if (isset($_GET['id'])){
+            $update = '<a href="update.php?id='.$_GET['id'].'">UPDATE</a>';
+        } else {
+            $update = '';
+        }
+    ?>
     <h1><a href="index.php">상품판매</a></h1>
     <a href="create.php">CREATE</a>
+    <?=$update?>
     <section>
         <ul>
             <?php
