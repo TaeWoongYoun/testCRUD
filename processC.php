@@ -1,17 +1,15 @@
-<?php $conn =  mysqli_connect('localhost', 'root', '', 'company');?>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>process create</title>
-</head>
-<body>
-    <?php
-        $sql = "INSERT INTO company (name, description, day) VALUES('{$_GET['name']}', '{$_GET['description']}', NOW())";
-        mysqli_query($conn, $sql);
-    ?>
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'company');
 
-    <a href="index.php">돌아가기</a>
-</body>
-</html>
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['img'])) {
+    $target_file = "uploads/" . basename($_FILES["img"]["name"]);
+    move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    mysqli_query($conn, "INSERT INTO company (name, description, day, file) VALUES('$name', '$description', NOW(), '$target_file')");
+}
+
+mysqli_close($conn);
+?>
+
+<a href="index.php">돌아가기</a>

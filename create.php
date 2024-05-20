@@ -13,11 +13,13 @@
         $result = mysqli_query($conn, $sql);
     ?>
 
-    <form action="processC.php" method="get">
-        <p><input type="file" name="img" id="img"></p>
+    <form action="processC.php" method="post" enctype="multipart/form-data">
+        <p><input type="file" name="img" id="img" accept="image/*" onchange="loadFile(this)"></p>
         <p><input type="text" name="name" id="name" placeholder="Dame"></p>
         <p><textarea name="description" id="description" placeholder="Description"></textarea></p>
         <p><input type="submit" value="등록"></p>
     </form>
+
+    <script src="index.js"></script>
 </body>
 </html>

@@ -18,7 +18,9 @@
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<a href='index.php?id={$row['id']}'>
                             <li>
-                                <img src=''>        
+                                <div class='addImg' id='showImg'>
+                                    <img src='{$row['file']}'>
+                                </div>      
                                 <h3>{$row['name']}</h3>
                                 <p>{$row['description']}</p>
                             </li>
@@ -27,8 +29,6 @@
             ?>
         </ul>
     </section>
-    <!-- <h2><?=$article['name']?></h2>
-    <p><?=$article['description']?></p> -->
     <script src="index.js"></script>
 </body>
 </html>
