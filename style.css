@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+section{
+    width: 100%;
+    display: flex;
+}
+
+section ol{
+    display: flex;
+}
+
+section ol li{
+    width: 100px;
+    height: 50px;
+    margin: 30px;
+}
