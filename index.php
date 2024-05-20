@@ -18,10 +18,13 @@ $conn =  mysqli_connect('localhost', 'root', '', 'company');
                 $sql = "SELECT * FROM company";
                 $result = mysqli_query($conn, $sql);
                 while ($row = mysqli_fetch_array($result)) {
-                    echo "<li>
-                            <a href='index.php?id={$row['id']}'>{$row['name']}</a>
-                            <p>{$row['description']}</p>
-                        </li>";
+                    echo "<a href='index.php?id={$row['id']}'>
+                            <li>
+                                <img src=''>        
+                                <h3>{$row['name']}</h3>
+                                <p>{$row['description']}</p>
+                            </li>
+                        </a>";
                 }
 
                 // if(isset($_GET['id'])){
