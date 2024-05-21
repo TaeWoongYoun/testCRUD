@@ -11,13 +11,19 @@
     <?php
         if (isset($_GET['id'])){
             $update = '<a href="update.php?id='.$_GET['id'].'">UPDATE</a>';
+            $delete = '<form action="processD.php" method="post">
+                        <input type="hidden" name="id" value="'.$_GET['id'].'">
+                        <input type="submit" value="DELETE">
+                        </form>';
         } else {
             $update = '';
+            $delete = '';
         }
     ?>
     <h1><a href="index.php">상품판매</a></h1>
     <a href="create.php">CREATE</a>
     <?=$update?>
+    <?=$delete?>
     <section>
         <ul>
             <?php
