@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect('localhost', 'root', '', 'company');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['img'])) {
+if (isset($_FILES['img'])) {
     $target_file = "uploads/" . basename($_FILES["img"]["name"]);
     move_uploaded_file($_FILES["img"]["tmp_name"], $target_file);
     $name = $_POST['name'];
